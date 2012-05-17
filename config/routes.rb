@@ -1,7 +1,7 @@
-# Put your extension routes here.
+Spree::Core::Engine.routes.draw do
+  resources :press_clippings, path: 'press'
 
-map.resources :press_clippings, :as => 'press'
-
-map.namespace :admin do |admin|
-  admin.resources :press_clippings
+  namespace :admin do
+    resources :press_clippings
+  end
 end

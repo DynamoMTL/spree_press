@@ -1,0 +1,50 @@
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <%= button_link_to t(:new_press_clipping), spree.new_admin_press_clipping_path, :icon => 'add' %>
+    </li>
+  </ul>
+  <br class="clear" />
+</div>
+
+<h1>Press Clippings</h1>
+<h4>This is where you manage all of the amazing press that your site gets.</h4>
+
+<table class="admin-report" width="545">
+	<thead>
+		<tr>
+      		<th>Title</th>
+      		<th>Teaser</th>
+      		<th>URL</th>
+					<th>Image</th>
+					<th>PDF attached?</th>
+					<th></th>
+    	</tr>
+  	</thead>
+
+	<tbody>
+    	<% @press_clippings.each do |clipping| %>
+		<tr class="<%= cycle('even', 'odd') %>">
+			<td>
+				<%= clipping.title %>
+			</td>
+			<td>
+				<%= clipping.teaser %>
+			</td>
+			<td>
+				<%= clipping.url %>
+			</td>
+			<td>
+				<%= image_tag clipping.cover(:thumb) if clipping.cover? %>
+			</td>
+			<td>
+				<%= clipping.pdf? ? link_to('yes', clipping.pdf.url) : 'none' %>
+			</td>
+			<td>
+	          <%=link_to t("edit"), edit_object_url(clipping) %> |
+	          <%=link_to t("delete"), object_url(clipping), :method => :delete, :confirm => 'Are you sure' %>
+	        </td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

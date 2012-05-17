@@ -1,0 +1,10 @@
+<%= content_tag_for(:div, @press_clippings) do |press_clipping| %>
+  <%= link_to press_clipping.title, press_clipping %><br/>
+  <%= press_clipping.teaser %><br/>
+  <%= press_clipping.content %><br/>
+  <%= press_clipping.url %><br/>
+  <%= image_tag press_clipping.cover.url if press_clipping.cover? %><br/>
+  <%= link_to 'pdf', press_clipping.pdf.url if press_clipping.pdf? %><br/>
+<% end -%>
+
+

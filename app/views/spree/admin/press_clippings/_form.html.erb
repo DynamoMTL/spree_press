@@ -1,0 +1,37 @@
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @promotion } %>
+
+<fieldset id="general_fields">
+  <legend><%= t(:general) %></legend>
+  <%= f.field_container :title do %>
+    <%= f.label :title %><br />
+    <%= f.text_field :title, class: 'fullwidth title' %>
+  <% end %>
+
+  <%= f.field_container :teaser do %>
+    <%= f.label :teaser %><br />
+    <%= f.text_area :teaser, class: 'fullwidth' %>
+  <% end %>
+
+  <%= f.field_container :content do %>
+    <%= f.label :content %><br />
+    <%= f.text_area :content, class: 'fullwidth' %>
+  <% end %>
+
+  <%= f.field_container :url do %>
+    <%= f.label :url %><br />
+    <%= f.text_field :url, class: 'fullwidth' %>
+  <% end %>
+</fieldset>
+
+<fieldset id="asset_fields">
+  <legend><%= t(:assets) %></legend>
+  <%= f.field_container :cover do %>
+    <%= f.label :cover, 'Cover Image' %><br />
+    <%= f.file_field :cover %>
+  <% end %>
+
+  <%= f.field_container :pdf do %>
+    <%= f.label :pdf, 'PDF File' %><br />
+    <%= f.file_field :pdf %>
+  <% end %>
+</fieldset>
