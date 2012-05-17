@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_press'
-  s.version     = '1.1.1'
+  s.version     = '1.1.2'
   s.summary     = 'Press clipping extension for Spree 1.1.x'
   s.description = 'A simple extension that allows press clippings and articles to be featured on your spree site.'
   s.required_ruby_version = '>= 1.9.3'
