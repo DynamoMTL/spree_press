@@ -1,5 +1,5 @@
 module Spree
-  class PressClippingsController < BaseController
+  class PressClippingsController < StoreController
 
     respond_to :html
 
