@@ -21,6 +21,11 @@
     <%= f.label :url %><br />
     <%= f.text_field :url, class: 'fullwidth' %>
   <% end %>
+
+  <%= f.field_container :publish_date do %>
+    <%= f.label :publish_date %><br />
+    <%= f.date_field :publish_date, class: 'fullwidth' %>
+  <% end %>
 </fieldset>
 
 <fieldset id="asset_fields">
