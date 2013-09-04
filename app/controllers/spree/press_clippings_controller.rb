@@ -4,7 +4,7 @@ module Spree
     respond_to :html
 
     def index
-      @press_clippings = Spree::PressClipping.order('id desc')
+      @press_clippings = Spree::PressClipping.order('publish_date desc, id desc')
     end
 
     def show
