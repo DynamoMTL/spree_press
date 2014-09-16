@@ -8,6 +8,8 @@ module Spree
                               :path => ":rails_root/public/assets/press/:id/:style/:basename.:extension"
 
 
+    validates_attachment_content_type :cover, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+    validates_attachment_content_type :pdf, content_type: "application/pdf"
 
     scope :last_five, :order => 'id desc', :limit => 5
 
