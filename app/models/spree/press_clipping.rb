@@ -1,7 +1,5 @@
 module Spree
   class PressClipping < ActiveRecord::Base
-    attr_accessible :content, :cover_content_type, :cover_file_name, :cover_file_size, :cover_updated_at, :pdf_content_type, :pdf_file_name, :pdf_file_size, :pdf_updated_at, :teaser, :title, :url, :cover, :pdf
-
     has_attached_file :pdf,   :url => "/assets/press/:id/:basename.:extension",
                               :path => ":rails_root/public/assets/press/:id/:basename.:extension"
 
