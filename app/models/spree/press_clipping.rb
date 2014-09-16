@@ -8,20 +8,6 @@ module Spree
                               :path => ":rails_root/public/assets/press/:id/:style/:basename.:extension"
 
 
-    # Load user defined paperclip settings
-    if Spree::Config[:use_s3]
-      s3_creds = { :access_key_id => Spree::Config[:s3_access_key], :secret_access_key => Spree::Config[:s3_secret], :bucket => Spree::Config[:s3_bucket] }
-      Spree::PressClipping.attachment_definitions[:pdf][:storage] = :s3
-      Spree::PressClipping.attachment_definitions[:pdf][:s3_credentials] = s3_creds
-      Spree::PressClipping.attachment_definitions[:pdf][:s3_headers] = ActiveSupport::JSON.decode(Spree::Config[:s3_headers])
-      Spree::PressClipping.attachment_definitions[:pdf][:bucket] = Spree::Config[:s3_bucket]
-      Spree::PressClipping.attachment_definitions[:pdf][:path] = "app/public/spree/press/:id/:basename.:extension"
-      Spree::PressClipping.attachment_definitions[:cover][:storage] = :s3
-      Spree::PressClipping.attachment_definitions[:cover][:s3_credentials] = s3_creds
-      Spree::PressClipping.attachment_definitions[:cover][:s3_headers] = ActiveSupport::JSON.decode(Spree::Config[:s3_headers])
-      Spree::PressClipping.attachment_definitions[:cover][:bucket] = Spree::Config[:s3_bucket]
-      Spree::PressClipping.attachment_definitions[:cover][:path] = "app/public/spree/press/:id/:style/:basename.:extension"
-    end
 
     scope :last_five, :order => 'id desc', :limit => 5
 
