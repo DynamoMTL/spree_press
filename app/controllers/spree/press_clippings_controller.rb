@@ -1,7 +1,7 @@
 module Spree
   class PressClippingsController < BaseController
 
-    respond_to :html
+    respond_to :html, :json
 
     def index
       @press_clippings = Spree::PressClipping.order('id desc')
